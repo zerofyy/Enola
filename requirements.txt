@@ -1,12 +1,10 @@
 discord
-pyemojify
+pymongo
+packaging
+Pillow
+pytz
 colorama
 termcolor
-pymongo
-python-googlesearch
-inspiro
+pyemojify
 openai
 fuzzywuzzy
-python-Levenshtein
-pytz
-Pillow

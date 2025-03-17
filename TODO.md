@@ -27,16 +27,16 @@
 ⬛ |
 ❌ |-| assets/
 ❌ |-|-| __init__.py
-❌ |-|-| secrets.py
-❌ |-|-| installer.py
+✅ |-|-| secrets.py
 ❌ |-|-| emojis.py
-❌ |-|-| storage.py    (Servers & Channels)
+✅ |-|-| storage.py
 ❌ |-|-| coloring.py
 ⬛ |-|
 ✅ |-| core/
 ✅ |-|-| __init__.py
 ✅ |-|-| bot.py
 ✅ |-|-| database.py
+✅ |-|-| installer.py
 ⬛ |-|
 ❌ |-| extension_manager/
 ❌ |-|-| __init__.py
@@ -79,4 +79,5 @@
 
 # Notes & Ideas
 - Instead of `get_location()`, add `--not_home` as a command line argument in main.py (`get_prefix()` can stay).
+- Removed utils/assets/storage.Channels.anon_questions. It should be converted into a local feature for all servers.
 - ...
