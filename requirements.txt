@@ -1,0 +1,12 @@
+discord
+pyemojify
+colorama
+termcolor
+pymongo
+python-googlesearch
+inspiro
+openai
+fuzzywuzzy
+python-Levenshtein
+pytz
+Pillow

@@ -33,10 +33,10 @@
 ❌ |-|-| storage.py    (Servers & Channels)
 ❌ |-|-| coloring.py
 ⬛ |-|
-❌ |-| core/
-❌ |-|-| __init__.py
-❌ |-|-| bot.py
-❌ |-|-| database.py
+✅ |-| core/
+✅ |-|-| __init__.py
+✅ |-|-| bot.py
+✅ |-|-| database.py
 ⬛ |-|
 ❌ |-| extension_manager/
 ❌ |-|-| __init__.py
@@ -67,16 +67,16 @@
 
 # TODO (by priority)
 ```
-❌ | utils/core/*
-❌ | utils/assets/coloring.py
-❌ | utils/logging/logger.py
-❌ | utils/assets/installer.py
-❌ | utils/extension_manager/*
+✅ | utils/core/*
 ❌ | utils/assets/*
+❌ | utils/functions/*
+❌ | utils/logging/logger.py
+❌ | utils/extension_manager/*
+❌ | utils/exception_manager/*
 ❌ | main.py
 ```
 
 
 # Notes & Ideas
 - Instead of `get_location()`, add `--not_home` as a command line argument in main.py (`get_prefix()` can stay).
-- 
+- ...
