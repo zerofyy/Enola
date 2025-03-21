@@ -4,7 +4,6 @@ import subprocess
 from importlib import metadata
 from packaging import requirements
 
-
 from utils.logging import Logger
 
 
@@ -72,7 +71,7 @@ class Installer:
 
 
     @staticmethod
-    def install_module(module: str):
+    def install_module(module: str) -> None:
         """
         Install a python module.
 
@@ -86,7 +85,7 @@ class Installer:
 
 
     @staticmethod
-    def update_module(module: str):
+    def update_module(module: str) -> None:
         """
         Update a python module.
 
@@ -99,7 +98,7 @@ class Installer:
                               stdout = subprocess.PIPE, stderr = subprocess.PIPE)
 
 
-    def ensure_requirements(self):
+    def ensure_requirements(self) -> None:
         """ Check for and install any missing or outdated requirements. """
 
         Logger.log('checking requirements...')
@@ -127,7 +126,7 @@ class Installer:
 
 
     @staticmethod
-    def restart():
+    def restart() -> None:
         """ Restart the bot. """
 
         os.system('cls' if os.name == 'nt' else 'clear')

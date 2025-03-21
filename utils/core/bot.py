@@ -20,7 +20,7 @@ class Bot:
         return cls._instance
 
 
-    def setup(self, client: type[commands.Bot], location: str = 'home'):
+    def setup(self, client: type[commands.Bot], location: str = 'home') -> None:
         """
         Set up the Discord bot client.
 

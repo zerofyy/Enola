@@ -25,12 +25,12 @@
 ❌ | utils/
 ❌ | __init__.py
 ⬛ |
-❌ |-| assets/
-❌ |-|-| __init__.py
+✅ |-| assets/
+✅ |-|-| __init__.py
 ✅ |-|-| secrets.py
-❌ |-|-| emojis.py
+✅ |-|-| emojis.py
 ✅ |-|-| storage.py
-❌ |-|-| coloring.py
+✅ |-|-| coloring.py
 ⬛ |-|
 ✅ |-| core/
 ✅ |-|-| __init__.py
@@ -68,9 +68,10 @@
 # TODO (by priority)
 ```
 ✅ | utils/core/*
-❌ | utils/assets/*
+✅ | utils/assets/*
 ❌ | utils/functions/*
 ❌ | utils/logging/logger.py
+❌ |-| Update logging in installer.py
 ❌ | utils/extension_manager/*
 ❌ | utils/exception_manager/*
 ❌ | main.py
@@ -81,3 +82,11 @@
 - Instead of `get_location()`, add `--not_home` as a command line argument in main.py (`get_prefix()` can stay).
 - Removed utils/assets/storage.Channels.anon_questions. It should be converted into a local feature for all servers.
 - ...
+
+# Latest Changes
+- Updated typehinting for functions that don't return anything.
+- Finished utils/assets/ :
+  - emojis.py: Added Emoji class for easy use of emojis.
+  - coloring.py: Added Coloring class for coloring and formatting text.
+- Updated requirements.txt to use `sty` instead of `colorama` for text coloring.
+- Updated TODO list.

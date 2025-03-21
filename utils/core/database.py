@@ -19,7 +19,7 @@ class DB:
         return cls._instance
 
 
-    def setup(self, db_url: str):
+    def setup(self, db_url: str) -> None:
         """
         Set up the database.
 

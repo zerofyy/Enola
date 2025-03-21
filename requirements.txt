@@ -3,8 +3,7 @@ pymongo
 packaging
 Pillow
 pytz
-colorama
-termcolor
 pyemojify
+sty
 openai
 fuzzywuzzy
