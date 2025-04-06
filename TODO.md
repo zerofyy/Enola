@@ -65,6 +65,13 @@
 ❌ | logs/ 
 ```
 
+# DataBase Structure
+```
+📦 devices
+⬛ | mac_address: str
+⬛ | host: str
+```
+
 # TODO (by priority)
 ```
 ✅ | utils/core/*
@@ -81,12 +88,9 @@
 # Notes & Ideas
 - Instead of `get_location()`, add `--not_home` as a command line argument in main.py (`get_prefix()` can stay).
 - Removed utils/assets/storage.Channels.anon_questions. It should be converted into a local feature for all servers.
-- ...
+- Keep MAC addresses of different devices in the database to automatically check whether the bot is started from a home device or a server.
 
 # Latest Changes
-- Updated typehinting for functions that don't return anything.
-- Finished utils/assets/ :
-  - emojis.py: Added Emoji class for easy use of emojis.
-  - coloring.py: Added Coloring class for coloring and formatting text.
-- Updated requirements.txt to use `sty` instead of `colorama` for text coloring.
-- Updated TODO list.
+- Added `prefix` as an argument to Bot.setup().
+- Changed emoji names for loading bars.
+- ...

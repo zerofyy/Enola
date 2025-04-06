@@ -20,19 +20,20 @@ class Bot:
         return cls._instance
 
 
-    def setup(self, client: type[commands.Bot], location: str = 'home') -> None:
+    def setup(self, client: type[commands.Bot], location: str = 'home', prefix: str = '>') -> None:
         """
         Set up the Discord bot client.
 
         Arguments:
              client: Bot class with custom setup_hook function.
              location: The hosting location of the bot.
+             prefix: The commands prefix.
         """
 
         self.location = location
-        self.prefix = '>' if location == 'home' else '0'
+        self.prefix = prefix
         self.client = client(
-            command_prefix = self._instance.prefix,
+            command_prefix = prefix,
             intents = discord.Intents.all(),
             allowed_mentions = discord.AllowedMentions(everyone = False, roles = False, replied_user = False),
             case_insensitive = True
