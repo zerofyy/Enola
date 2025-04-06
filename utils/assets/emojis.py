@@ -23,16 +23,6 @@ class Emoji:
     slash = '<:ee:1105509426909171833>'
     reply = '<:ee:1311075281733423166>'
 
-    bar_str_empty = '<:ee:1106587508596285552>'
-    bar_str_half = '<:ee:1106587505798693025>'
-    bar_str_full = '<:ee:1106587503546347630>'
-    bar_mid_empty = '<:ee:1106587500983635968>'
-    bar_mid_half = '<:ee:1106587499540783244>'
-    bar_mid_full = '<:ee:1106587497284243579>'
-    bar_end_empty = '<:ee:1106587496055324682>'
-    bar_end_half = '<:ee:1106587494700548126>'
-    bar_end_full = '<:ee:1106587491777126461>'
-
     ping_good = '<:ee:1105122977206517890>'
     ping_ok = '<:ee:1105509430415597649>'
     ping_bad = '<:ee:1105509319719534682>'
@@ -84,6 +74,20 @@ class Emoji:
         """ Subclass for unicode emojis. """
 
         reply = '⤷'
+
+
+    class bar:
+        """ Subclass for progress bar emojis. """
+
+        l_empty = '<:ee:1106587508596285552>'
+        l_half = '<:ee:1106587505798693025>'
+        l_full = '<:ee:1106587503546347630>'
+        m_empty = '<:ee:1106587500983635968>'
+        m_half = '<:ee:1106587499540783244>'
+        m_full = '<:ee:1106587497284243579>'
+        r_empty = '<:ee:1106587496055324682>'
+        r_half = '<:ee:1106587494700548126>'
+        r_full = '<:ee:1106587491777126461>'
 
 
     class loading:

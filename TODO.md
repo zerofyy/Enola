@@ -84,7 +84,6 @@
 ❌ | main.py
 ```
 
-
 # Notes & Ideas
 - Instead of `get_location()`, add `--not_home` as a command line argument in main.py (`get_prefix()` can stay).
 - Removed utils/assets/storage.Channels.anon_questions. It should be converted into a local feature for all servers.
@@ -92,5 +91,5 @@
 
 # Latest Changes
 - Added `prefix` as an argument to Bot.setup().
-- Changed emoji names for loading bars.
-- ...
+- Reorganized emojis for progress bars.
+- Updated TODO list.

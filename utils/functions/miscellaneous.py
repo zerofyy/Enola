@@ -68,54 +68,65 @@ class Misc:
 
 
     @staticmethod
-    def create_loading_bar(bar_type: str, total: int | float, progress: int | float,
+    def create_progress_bar(bar_type: str, progress: int | float, total: int | float,
                            display_left: str = None, display_right: str = None) -> str:
         """
-        Create a loading bar.
+        Create a progress bar.
 
         Bar Types:
             - text | Plain text symbols.
             - unicode | Special characters.
+            - boxes | Combination of unicode characters and plain text.
             - emojis | Custom Discord emojis.
 
         Display Options:
-            - percent | Show bar progress as percentage.
-            - number | Show bar progress as a number.
-            - both | Show bar progress both as a number and percentage.
+            - percent | Show progress as percentage.
+            - number | Show progress as a number.
+            - both | Show progress both as a number and percentage.
             - None | Don't show any additional information.
 
         Arguments:
-             bar_type: The type of loading bar.
-             total: The maximum bar value.
-             progress: The current bar value.
+             bar_type: The type of progress bar.
+             progress: The current progress value.
+             total: The maximum progress value.
              display_left: What to display left of the bar.
              display_right: What to display right of the bar.
 
         Returns:
-            The loading bar as a string.
+            The progress bar as a string.
         """
 
         match bar_type:
             case 'unicode':
-                bar_segments = {'str_empty' : '▱', 'str_half' : '▱', 'str_full' : '▰',
-                                'mid_empty' : '▱', 'mid_half' : '▱', 'mid_full' : '▰',
-                                'end_empty' : '▱', 'end_half' : '▱', 'end_full' : '▰'}
-
+                bar_segments = ('▱▱', '▰▱', '▰▰',
+                                '▱▱', '▰▱', '▰▰',
+                                '▱▱', '▰▱', '▰▰')
+            case 'boxes':
+                bar_segments = ('--', '█-', '██',
+                                '--', '█-', '██',
+                                '--', '█-', '██')
             case 'emojis':
-                bar_segments = {'str_empty' : Emoji.bar_str_empty, 'str_half' : Emoji.bar_str_half, 'str_full' : Emoji.bar_str_full,
-                                'mid_empty' : Emoji.bar_mid_empty, 'mid_half' : Emoji.bar_mid_half, 'mid_full' : Emoji.bar_mid_full,
-                                'end_empty' : Emoji.bar_end_empty, 'end_half' : Emoji.bar_end_half, 'end_full' : Emoji.bar_end_full}
-
+                bar_segments = (Emoji.bar.l_empty, Emoji.bar.l_half, Emoji.bar.l_full,
+                                Emoji.bar.m_empty, Emoji.bar.m_half, Emoji.bar.m_full,
+                                Emoji.bar.r_empty, Emoji.bar.r_half, Emoji.bar.r_full)
             case _:
-                bar_segments = {'str_empty' : '-', 'str_half' : '-', 'str_full' : '=',
-                                'mid_empty' : '-', 'mid_half' : '-', 'mid_full' : '=',
-                                'end_empty' : '-', 'end_half' : '-', 'end_full' : '='}
+                bar_segments = ('--', '=-', '==',
+                                '--', '=-', '==',
+                                '--', '=-', '==')
 
-        """
-        - text    | [ 4/10] [====------] [40%]
-        - unicode | 4/10 ▰▰▰▰▱▱▱▱▱▱ 40%
-        - emojis  | ...
-        """
+        percent = '{0:.2f}'.format(100 * (progress / float(total)))
+        filled = 20 * progress // total
+
+        if bar_type == 'emojis':
+            pass
+        else:
+            bar = bar_segments[0] + bar_segments[]
+
+        #######
+        # percent = ("{0:.1f}").format(100 * (iteration / float(total)))
+        # filled_length = int(length * iteration // total)
+        # bar = fill * filled_length + '-' * (length - filled_length)
+        #######
 
 
 __all__ = ['Misc']
