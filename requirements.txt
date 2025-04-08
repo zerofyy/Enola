@@ -6,4 +6,4 @@ pytz
 pyemojify
 sty
 openai
-fuzzywuzzy
+thefuzz

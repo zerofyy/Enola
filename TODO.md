@@ -76,7 +76,7 @@
 ```
 ✅ | utils/core/*
 ✅ | utils/assets/*
-❌ | utils/functions/*
+✅ | utils/functions/*
 ❌ | utils/logging/logger.py
 ❌ |-| Update logging in installer.py
 ❌ | utils/extension_manager/*
@@ -91,5 +91,7 @@
 
 # Latest Changes
 - Added `prefix` as an argument to Bot.setup().
+- Finished utils/functions/ .
 - Reorganized emojis for progress bars.
+- Updated requirements.txt to use a newer version of fuzzywuzzy.
 - Updated TODO list.
