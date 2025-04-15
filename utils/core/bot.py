@@ -9,6 +9,7 @@ class Bot:
     location: str = None
     prefix: str = None
     client: commands.Bot = None
+    timezone: str = None
 
 
     def __new__(cls) -> 'Bot':
@@ -20,7 +21,8 @@ class Bot:
         return cls._instance
 
 
-    def setup(self, client: type[commands.Bot], location: str = 'home', prefix: str = '>') -> None:
+    def setup(self, client: type[commands.Bot], location: str = 'home',
+              prefix: str = '>', timezone: str = None) -> None:
         """
         Set up the Discord bot client.
 
@@ -28,10 +30,12 @@ class Bot:
              client: Bot class with custom setup_hook function.
              location: The hosting location of the bot.
              prefix: The commands prefix.
+             timezone: The default timezone.
         """
 
         self.location = location
         self.prefix = prefix
+        self.timezone = timezone
         self.client = client(
             command_prefix = prefix,
             intents = discord.Intents.all(),

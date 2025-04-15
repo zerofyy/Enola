@@ -6,9 +6,12 @@ class Coloring:
     """ Class for coloring and formatting text. """
 
     white = 0xFFFFFF
+    black = 0x000000
     red = 0xef4a4a
     green = 0x4aef4f
     blue = 0x5865F2
+    yellow = 0xf8ff2d
+    gold = 0xfcba05
 
     Text = sty.fg
     Back = sty.bg

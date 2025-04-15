@@ -1,10 +1,9 @@
 import datetime
 import random
 import time
-from difflib import SequenceMatcher
-
 import pytz
 from thefuzz import fuzz
+from difflib import SequenceMatcher
 from uuid import getnode as get_mac_address
 
 import discord
@@ -240,31 +239,39 @@ class Misc:
 
 
     @staticmethod
-    def get_current_time(seconds_only: bool = False, timezone: str = 'UTC',
-                         time_format: str = '%Y-%m-%d %H:%M:%S') -> str | float:
+    def get_current_time(seconds_only: bool = False, timezone: str = 'default',
+                         time_format: str = '%d-%m-%Y %H:%M:%S', as_dt: bool = False) -> str | float | datetime:
         """
         Get the current time.
 
         Arguments:
              seconds_only: Whether to return the number of seconds since the Epoch.
              timezone: A specific timezone.
-             time_format: A datetime format, example: %d/%m/%Y, %H:%M:%S .
+             time_format: A datetime format, example: %d/%m/%Y, %H:%M:%S . Does not apply if as_dt==True.
+             as_dt: Whether to return a datetime object.
 
         Returns:
-            The current time.
+            The current time as an object, formatted string, or in seconds only.
         """
 
         if seconds_only:
             return time.time()
 
+        if timezone == 'default':
+            timezone = Bot.timezone
+
         timezone = pytz.timezone(timezone)
         datetime_now = datetime.datetime.now(timezone).replace(microsecond = 0)
+
+        if as_dt:
+            return datetime_now
+
         return datetime_now.strftime(time_format)
 
 
     @staticmethod
     def get_specific_time(hour: int, minute: int, second: int, microsecond: int,
-                          timezone: str = 'UTC', time_format: str = None) -> str | datetime.time:
+                          timezone: str = 'default', time_format: str = None) -> str | datetime.time:
         """
         Get a specific time.
 
@@ -277,8 +284,11 @@ class Misc:
              time_format: A datetime format, example: %d/%m/%Y, %H:%M:%S .
 
         Returns:
-            The specified time as an object, or a formatted string.
+            The specified time as an object or a formatted string.
         """
+
+        if timezone == 'default':
+            timezone = Bot.timezone
 
         timezone = pytz.timezone(timezone)
         datetime_specific = datetime.time(hour, minute, second, microsecond, timezone)
